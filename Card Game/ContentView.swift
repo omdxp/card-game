@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     // Properties
-    @State var playerCard = "card5"
-    @State var cpuCard = "card9"
-    @State var playerScore = 0
-    @State var cpuScore = 0
+    @State private var playerCard = "card5"
+    @State private var cpuCard = "card9"
+    @State private var playerScore = 0
+    @State private var cpuScore = 0
     
     var body: some View {
         ZStack {
@@ -40,8 +40,15 @@ struct ContentView: View {
                     cpuCard = "card" + String(cpuRand)
                     
                     // Update the score
-                    playerScore += 1
-                    cpuScore += 1
+                    if playerRand == cpuRand {
+                        return
+                    }
+                    if playerRand > cpuRand {
+                        playerScore += 1
+                    } else {
+                        cpuScore += 1
+                    }
+                    
                 } label: {
                     Image("dealbutton")
                 }
