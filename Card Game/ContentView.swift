@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Properties
     var body: some View {
         ZStack {
             Image("background")
@@ -24,7 +25,11 @@ struct ContentView: View {
                     Spacer()
                 }
                 Spacer()
-                Image("dealbutton")
+                Button {
+                    print("Hi")
+                } label: {
+                    Image("dealbutton")
+                }
                 Spacer()
                 HStack {
                     Spacer()
@@ -53,6 +58,8 @@ struct ContentView: View {
             }
         }
     }
+    
+    // Methods
 }
 
 struct ContentView_Previews: PreviewProvider {
