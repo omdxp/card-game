@@ -31,9 +31,13 @@ struct ContentView: View {
                 }
                 Spacer()
                 Button {
+                    // Generate a random number between 2 and 14
+                    let playerRand = Int.random(in: 2...14)
+                    let cpuRand = Int.random(in: 2...14)
+                    
                     // Update the cards
-                    playerCard = "card11"
-                    cpuCard = "card12"
+                    playerCard = "card" + String(playerRand)
+                    cpuCard = "card" + String(cpuRand)
                     
                     // Update the score
                     playerScore += 1
